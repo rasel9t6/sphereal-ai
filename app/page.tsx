@@ -1,7 +1,9 @@
+import Header from '@/components/sections/Header';
+
 export default function Home() {
   return (
     <>
-      <header>Heder</header>
+      <Header />
       <main>Main</main>
       <footer>Footer</footer>
     </>
