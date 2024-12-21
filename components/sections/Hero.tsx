@@ -8,8 +8,8 @@ export const Hero = () => {
   return (
     <section>
       <div className='container'>
-        <div className='border-custom-1 border-x'>
-          <div className='container relative isolate overflow-hidden py-24 text-center [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] md:py-36 lg:py-48'>
+        <div className='border-section'>
+          <div className='section-container relative isolate  text-center [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] '>
             <div
               className='absolute inset-0 -z-10'
               style={{

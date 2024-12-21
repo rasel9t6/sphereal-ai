@@ -35,6 +35,11 @@ body {
   }
 }
 @layer utilities {
+  /* sections */
+  .section-container {
+    @apply container mx-auto py-24 md:py-36 lg:py-48 overflow-hidden;
+  }
+  /* custom borders */
   .border-gradient {
     @apply border-2 border-transparent;
     background:
@@ -52,8 +57,11 @@ body {
   .border-custom-1 {
     @apply border-gray-200/20;
   }
-  /* headings */
+  .border-section {
+    @apply border-x border-gray-200/20;
+  }
 
+  /* headings */
   .h1-semibold {
     @apply text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight text-gray-100;
   }
