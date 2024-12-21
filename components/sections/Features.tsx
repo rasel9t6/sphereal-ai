@@ -66,35 +66,32 @@ export const Features = () => {
   return (
     <section className='border-section relative !border-t'>
       <Plus />
-      <div className='section-container '>
-        <h2 className='text-3xl font-semibold text-gray-200'>
-          Your AI-powered collaboration companion
-        </h2>
-        <ul className='mt-12 flex flex-col gap-8'>
-          {features.map((feature, index) => (
-            <li
-              key={index}
-              className='flex items-center gap-4'
-            >
-              <FontAwesomeIcon
-                icon={faCircleCheck}
-                className='size-6 text-violet-400'
-              />
-              <span className='text-xl font-medium'>{feature}</span>
-            </li>
-          ))}
-        </ul>
-        <Button
-          variant='secondary'
-          className='mt-16'
-        >
-          Try it now
-        </Button>
-        <div className='relative size-[270px]'>
-          <Orbit className='size-[275px]' />
-          <Orbit className='size-[180px]' />
+      <div className='section-container mx-auto grid grid-cols-1 place-items-center gap-20 md:px-20 lg:grid-cols-2 lg:gap-10 '>
+        <div className='col-span-1'>
+          <h2 className='h2-semibold'>
+            Your AI-powered collaboration companion
+          </h2>
+          <ul className='mt-12 flex flex-col gap-8'>
+            {features.map((feature, index) => (
+              <li
+                key={index}
+                className='flex items-center gap-4'
+              >
+                <FontAwesomeIcon
+                  icon={faCircleCheck}
+                  className='size-6 text-violet-400'
+                />
+                <span className='text-xl font-medium'>{feature}</span>
+              </li>
+            ))}
+          </ul>
+          <Button className='mt-16'>Try it now</Button>
+        </div>
+        <div className='relative col-span-1 mx-auto size-[270px] md:size-[450px]'>
+          <Orbit className='size-[275px] md:size-[300px]' />
+          <Orbit className='size-[180px] md:size-[457px]' />
           <div className='absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2'>
-            <Logo className='size-24' />
+            <Logo className='size-24 md:size-28' />
           </div>
           {/* Circle logos */}
           {logos.map(({ src, alt, rotate }, index) => (
@@ -104,7 +101,7 @@ export const Features = () => {
               style={{ transform: `rotate(${rotate}deg)` }}
             >
               <div
-                className='border-custom-1 absolute left-0 top-1/2 inline-flex size-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center border bg-gray-950'
+                className='border-custom-1 absolute left-0 top-1/2 inline-flex size-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center border bg-gray-950 md:size-14'
                 style={{
                   transform: `translate(-50%, -50%) rotate(-${rotate}deg)`,
                 }}
@@ -112,7 +109,7 @@ export const Features = () => {
                 <Image
                   src={src}
                   alt={alt}
-                  className='size-6'
+                  className='size-6 md:size-9'
                 />
               </div>
             </div>
