@@ -6,7 +6,7 @@ export type ButtonProps = {
   block?: boolean;
 } & HTMLAttributes<HTMLButtonElement>;
 const classes = cva(
-  'h-10 rounded-lg px-6 text-xs font-bold uppercase tracking-widest',
+  'inline-block h-10 rounded-lg px-6 text-xs font-bold uppercase tracking-widest',
   {
     variants: {
       block: { true: 'w-full' },

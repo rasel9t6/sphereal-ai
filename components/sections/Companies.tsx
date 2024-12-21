@@ -36,7 +36,7 @@ export const Companies = () => {
   return (
     <section className='border-section'>
       <div className='section-container !pt-0'>
-        <h2 className='text-center text-xs font-bold uppercase tracking-widest text-gray-500'>
+        <h2 className='text-center text-xs font-bold uppercase tracking-widest text-gray-400/75'>
           Empowering creators at leading companies
         </h2>
         <div className='-mx-4 mt-20 flex overflow-x-clip lg:-mx-8'>
