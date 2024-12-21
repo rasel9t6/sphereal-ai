@@ -22,18 +22,20 @@ body {
 
 @layer base {
   :root {
-    --color-violet-400: theme("colors.violet.400");
-    --color-fuchsia-400: theme("colors.fuchsia.400");
-    --color-amber-300: theme("colors.amber.300");
-    --color-teal-300: theme("colors.teal.300");
-    --color-gray-950: theme("colors.gray.950");
+    --color-violet-400: theme('colors.violet.400');
+    --color-fuchsia-400: theme('colors.fuchsia.400');
+    --color-fuchsia-900: theme('colors.fuchsia.900');
+    --color-amber-300: theme('colors.amber.300');
+    --color-teal-300: theme('colors.teal.300');
+    --color-gray-950: theme('colors.gray.950');
+    --color-indigo-900: theme('colors.indigo.900');
   }
   .absolute-center {
     @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
   }
 }
 @layer utilities {
-  .gradient-border {
+  .border-gradient {
     @apply border-2 border-transparent;
     background:
       linear-gradient(var(--color-gray-950), var(--color-gray-950)) padding-box,
@@ -46,5 +48,13 @@ body {
           var(--color-violet-400)
         )
         border-box;
+  }
+  .border-custom-1 {
+    @apply border-gray-200/20;
+  }
+  /* headings */
+
+  .h1-semibold {
+    @apply text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight text-gray-100;
   }
 }

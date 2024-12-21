@@ -42,10 +42,10 @@ export const Header = () => {
   const handleClick = () => setIsMobileNavOpen((prev) => !prev);
   return (
     <>
-      <header className='relative z-40 border-b border-gray-200/20 bg-gray-950'>
+      <header className='border-custom-1 relative  z-40 border-b bg-gray-950'>
         <div className='container'>
-          <div className='flex h-18 items-center justify-between lg:h-20'>
-            <div className='flex items-center gap-4'>
+          <div className='flex  h-18 items-center justify-between lg:h-20'>
+            <div className='flex  items-center gap-4'>
               <div
                 className='size-10 bg-[conic-gradient(from_45deg,var(--color-violet-400),var(--color-fuchsia-400),var(--color-amber-300),var(--color-teal-300),var(--color-violet-400))]'
                 style={{
@@ -57,7 +57,7 @@ export const Header = () => {
                 sphereal.ai
               </div>
             </div>
-            <div className='hidden h-full     gap-4 lg:flex'>
+            <div className='hidden h-full gap-4 lg:flex'>
               <nav className='h-full'>
                 {navItems.map((item) => (
                   <Link
@@ -84,7 +84,7 @@ export const Header = () => {
             <div className='flex items-center lg:hidden'>
               <button
                 onClick={handleClick}
-                className='gradient-border relative size-10 rounded-lg'
+                className='border-gradient relative size-10 rounded-lg'
               >
                 <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 '>
                   <div
@@ -108,7 +108,7 @@ export const Header = () => {
         </div>
       </header>
       {isMobileNavOpen && (
-        <div className='fixed inset-x-0 bottom-0 top-18 z-30 overflow-hidden bg-gray-950 lg:hidden'>
+        <div className='fixed inset-0 z-30 h-full overflow-hidden bg-gray-950 lg:hidden'>
           <Orbit />
           <Orbit className='size-[350px]' />
           <Orbit className='size-[500px]' />
