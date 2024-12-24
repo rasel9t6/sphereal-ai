@@ -80,7 +80,7 @@ export const Pricing = () => {
 
                 <span className='text-7xl '>{tier.price}</span>
               </div>
-              <Button variant={tier.buttonVariant}>{tier.buttonText}</Button>
+              <Button>{tier.buttonText}</Button>
               <ul>
                 {tier.features.map((feature) => (
                   <li key={feature}>{feature}</li>
