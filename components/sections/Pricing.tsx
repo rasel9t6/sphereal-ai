@@ -1,6 +1,8 @@
 import { twMerge } from 'tailwind-merge';
-import Button from '../Button';
+import Button, { ButtonProps } from '../Button';
 import Plus from '../Plus';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
 export const pricingTiers = [
   {
@@ -8,6 +10,7 @@ export const pricingTiers = [
     description: 'AI chatbot, personalized recommendations',
     price: 'Free',
     buttonText: 'Get Started',
+    buttonVariant: 'secondary',
     features: [
       'Access to AI chatbot for natural language conversations',
       'Basic task automation for simple workflows',
@@ -21,6 +24,7 @@ export const pricingTiers = [
     description: 'Advanced AI capabilities for enhanced productivity',
     price: 99,
     buttonText: 'Upgrade to Premium',
+    buttonVariant: 'secondary',
     features: [
       'All Basic features included',
       'Priority access to new AI features and updates',
@@ -46,7 +50,16 @@ export const pricingTiers = [
     color: 'teal',
     className: 'lg:py-12 lg:my-6',
   },
-];
+] satisfies {
+  title: string;
+  description: string;
+  price: string | number | null;
+  buttonText: string;
+  features: string[];
+  buttonVariant?: ButtonProps['variant'];
+  className: string;
+  color: 'amber' | 'violet' | 'teal';
+}[];
 
 export const Pricing = () => {
   return (
@@ -56,11 +69,14 @@ export const Pricing = () => {
         <h2 className='h2-semibold text-center'>
           Flexible plans for every need
         </h2>
-        <div className='mt-12 space-y-4'>
+        <div className='mt-12 flex flex-col gap-8 lg:flex-row lg:items-start'>
           {pricingTiers.map((tier) => (
             <div
               key={tier.title}
-              className='border-custom-1 rounded-3xl border px-6 py-12'
+              className={twMerge(
+                'border-custom-1 mx-auto flex-1 max-w-sm rounded-3xl border px-6 py-12',
+                tier.className
+              )}
             >
               <h3
                 className={twMerge(
@@ -77,13 +93,29 @@ export const Pricing = () => {
                 {typeof tier.price === 'number' && (
                   <span className='align-top text-2xl '>$</span>
                 )}
-
-                <span className='text-7xl '>{tier.price}</span>
+                <span className='text-7xl'>
+                  {tier.price ? tier.price : <>&nbsp;</>}
+                </span>
               </div>
-              <Button variant={tier.buttonVariant}>{tier.buttonText}</Button>
-              <ul>
+              <Button
+                className='mt-8'
+                block
+                variant={tier.buttonVariant}
+              >
+                {tier.buttonText}
+              </Button>
+              <ul className='mt-8 space-y-4'>
                 {tier.features.map((feature) => (
-                  <li key={feature}>{feature}</li>
+                  <li
+                    key={feature}
+                    className='border-custom-1 flex gap-4 border-t pt-4'
+                  >
+                    <FontAwesomeIcon
+                      icon={faCheckCircle}
+                      className='size-6 shrink-0 text-violet-400'
+                    />
+                    <span className='font-medium'>{feature}</span>
+                  </li>
                 ))}
               </ul>
             </div>
