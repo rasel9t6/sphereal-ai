@@ -19,13 +19,11 @@ export const Hero = () => {
                   'radial-gradient(circle farthest-corner, black, transparent)',
               }}
             ></div>
-            <div className='absolute inset-0 -z-10'>
-              <Orbit className='size-[350px]' />
-              <Orbit className='size-[600px]' />
-              <Orbit className='size-[850px]' />
-              <Orbit className='size-[1100px]' />
-              <Orbit className='size-[1350px]' />
-            </div>
+            <Orbit className='size-[350px]' />
+            <Orbit className='size-[600px]' />
+            <Orbit className='size-[850px]' />
+            <Orbit className='size-[1100px]' />
+            <Orbit className='size-[1350px]' />
             <h1 className='h1-semibold'>
               Unlock the future of AI Conversations with{' '}
               <span className='relative'>
@@ -72,7 +70,7 @@ export const Hero = () => {
               </div>
               <Planet
                 color='violate'
-                className='translate-x-[-316px] translate-y-[-76px]'
+                className='translate-x-[-316px] translate-y-[-76px] rotate-135'
               />
               <Planet
                 color='violate'
@@ -81,7 +79,7 @@ export const Hero = () => {
               <Planet
                 size='sm'
                 color='fuchsia'
-                className='translate-x-[-500px] translate-y-[-330px]'
+                className='translate-x-[-500px] translate-y-[-330px] rotate-135'
               />
               <Planet
                 size='md'
