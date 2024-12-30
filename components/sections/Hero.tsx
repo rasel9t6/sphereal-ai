@@ -6,7 +6,7 @@ import Orbit from '../Orbit';
 import Planet from '../Planet';
 export const Hero = () => {
   return (
-    <section>
+    <>
       <div className='container'>
         <div className='border-section'>
           <div className='section-container relative isolate  text-center [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] '>
@@ -113,7 +113,7 @@ export const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
+    </>
   );
 };
 
