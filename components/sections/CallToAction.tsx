@@ -27,15 +27,26 @@ export const CallToAction = () => {
         </div>
         <div className='absolute-center -z-10'>
           <Planet className='translate-x-[-200px] translate-y-[200px] rotate-45' />
+          <Planet className='translate-x-[200px] translate-y-[-180px] -rotate-135' />
           <Planet
             size='md'
             color='teal'
-            className='translate-x-[-500px] translate-y-[-200px] rotate-45'
+            className='translate-x-[-500px] rotate-90'
           />
           <Planet
             size='md'
             color='teal'
-            className='translate-x-[500px] translate-y-[-200px] -rotate-135'
+            className='translate-x-[500px] translate-y-[-100px] -rotate-135'
+          />
+          <Planet
+            size='sm'
+            color='fuchsia'
+            className='translate-x-[-400px] translate-y-[-250px] rotate-135'
+          />
+          <Planet
+            size='sm'
+            color='fuchsia'
+            className='translate-x-[400px] translate-y-[150px] -rotate-45'
           />
         </div>
         <h2 className='h2-semibold mx-auto max-w-3xl'>
