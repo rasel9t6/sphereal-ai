@@ -1,7 +1,7 @@
 import { cva } from 'class-variance-authority';
 
 const classes = cva(
-  'absolute left-1/2 top-0  rounded-full bg-gradient-to-b to-gray-950',
+  ' rounded-full bg-gradient-to-b to-gray-950',
   {
     variants: {
       size: {
