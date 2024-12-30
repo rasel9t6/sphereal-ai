@@ -46,7 +46,7 @@ export const Header = () => {
         <div className='container'>
           <div className='flex  h-18 items-center justify-between lg:h-20'>
             <div className='flex  items-center gap-4'>
-             <Logo/>
+              <Logo />
               <div className='text-2xl font-extrabold text-[var(--color-violate-400)]'>
                 sphereal.ai
               </div>
@@ -57,7 +57,14 @@ export const Header = () => {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className='relative    inline-flex h-full items-center px-10 text-xs font-bold uppercase tracking-wider text-gray-400 before:absolute before:bottom-0 before:left-0 before:h-2 before:w-px before:bg-gray-200/20 before:content-[""] last:after:absolute last:after:bottom-0 last:after:right-0 last:after:h-2 last:after:w-px last:after:bg-gray-200/20 last:after:content-[""]'
+                    className='relative inline-flex h-full items-center px-10 text-xs font-bold uppercase tracking-wider text-gray-400 before:absolute before:bottom-0 before:left-0 before:h-2 before:w-px before:bg-gray-200/20 before:content-[""] last:after:absolute last:after:bottom-0 last:after:right-0 last:after:h-2 last:after:w-px last:after:bg-gray-200/20 last:after:content-[""]'
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIsMobileNavOpen(false);
+                      const element = document.querySelector(item.href);
+                      if (element)
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }}
                   >
                     {item.name}
                   </Link>
@@ -116,6 +123,12 @@ export const Header = () => {
                   key={item.name}
                   href={item.href}
                   className='h-10 text-xs font-bold uppercase tracking-widest text-gray-400'
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsMobileNavOpen(false);
+                    const element = document.querySelector(item.href);
+                    if (element) element.scrollIntoView({ behavior: 'smooth' });
+                  }}
                 >
                   {item.name}
                 </Link>

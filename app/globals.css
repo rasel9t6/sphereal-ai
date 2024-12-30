@@ -39,6 +39,9 @@ body {
   .section-container {
     @apply container mx-auto py-24 md:py-36 lg:py-48 overflow-hidden;
   }
+  .footer-container {
+    @apply container mx-auto py-8 overflow-hidden;
+  }
   /* custom borders */
   .border-gradient {
     @apply border-2 border-transparent;

@@ -63,7 +63,10 @@ export const pricingTiers = [
 
 export const Pricing = () => {
   return (
-    <section className='border-section relative !border-t'>
+    <section
+      id='pricing'
+      className='border-section relative !border-t'
+    >
       <Plus />
       <div className='section-container'>
         <h2 className='h2-semibold text-center'>

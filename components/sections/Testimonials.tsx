@@ -41,7 +41,10 @@ export const testimonials = [
 const SELECTED_TESTIMONIAL_INDEX = 0;
 export const Testimonials = () => {
   return (
-    <section className='border-section relative !border-t'>
+    <section
+      id='testimonials'
+      className='border-section relative !border-t'
+    >
       <Plus />
       <div className='section-container'>
         <div className='border-gradient relative flex flex-col gap-12 rounded-3xl px-6 py-16 md:mx-10 md:flex-row md:items-center md:justify-between md:px-10 lg:mx-20 lg:px-16 lg:py-20'>
