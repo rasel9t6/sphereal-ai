@@ -1,8 +1,11 @@
+import CallToAction from '@/components/sections/CallToAction';
 import Companies from '@/components/sections/Companies';
 import Features from '@/components/sections/Features';
+import Footer from '@/components/sections/Footer';
 import Header from '@/components/sections/Header';
 import Hero from '@/components/sections/Hero';
 import Pricing from '@/components/sections/Pricing';
+import Testimonials from '@/components/sections/Testimonials';
 
 export default function Home() {
   return (
@@ -12,9 +15,11 @@ export default function Home() {
       <main className='container h-full'>
         <Companies />
         <Features />
-        <Pricing/>
+        <Pricing />
+        <Testimonials />
+        <CallToAction />
       </main>
-      <footer>Footer</footer>
+      <Footer />
     </>
   );
 }

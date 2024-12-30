@@ -64,7 +64,10 @@ export const logos = [
 
 export const Features = () => {
   return (
-    <section className='border-section relative !border-t'>
+    <section
+      id='features'
+      className='border-section relative !border-t'
+    >
       <Plus />
       <div className='section-container mx-auto grid grid-cols-1 place-items-center gap-20 md:px-20 lg:grid-cols-2 lg:gap-10 '>
         <div className='col-span-1'>
