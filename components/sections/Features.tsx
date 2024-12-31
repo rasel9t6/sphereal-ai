@@ -1,3 +1,5 @@
+'use client';
+import { motion } from 'motion/react';
 import slackLogo from '@/public/images/slack-logo.png';
 import dockerLogo from '@/public/images/docker-logo.png';
 import figmaLogo from '@/public/images/figma-logo.png';
@@ -88,7 +90,12 @@ export const Features = () => {
               </li>
             ))}
           </ul>
-          <Button className='mt-16'>Try it now</Button>
+          <Button
+            variant='primary'
+            className='mt-16'
+          >
+            Try it now
+          </Button>
         </div>
         <div className='relative col-span-1 mx-auto size-[270px] md:size-[450px]'>
           <Orbit className='size-[275px] md:size-[300px]' />
@@ -98,24 +105,75 @@ export const Features = () => {
           </div>
           {/* Circle logos */}
           {logos.map(({ src, alt, rotate }, index) => (
-            <div
+            <motion.div
               key={index}
               className='absolute inset-0'
-              style={{ transform: `rotate(${rotate}deg)` }}
+              initial={{ rotate: rotate }}
+              animate={{
+                rotate: [
+                  rotate,
+                  rotate + 45,
+                  rotate + 45,
+                  rotate + 90,
+                  rotate + 90,
+                  rotate + 135,
+                  rotate + 135,
+                  rotate + 180,
+                  rotate + 180,
+                  rotate + 225,
+                  rotate + 225,
+                  rotate + 270,
+                  rotate + 270,
+                  rotate + 315,
+                  rotate + 315,
+                  rotate + 360,
+                  rotate + 360,
+                ],
+              }}
+              transition={{
+                duration: 10,
+                repeat: Infinity,
+              }}
             >
-              <div
-                className='border-custom-1 absolute left-0 top-1/2 inline-flex size-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center border bg-gray-950 md:size-14'
-                style={{
-                  transform: `translate(-50%, -50%) rotate(-${rotate}deg)`,
+              <motion.div
+                initial={{
+                  translate: '-50% -50%',
+                  rotate: -rotate,
                 }}
+                animate={{
+                  rotate: [
+                    -rotate,
+                    -rotate - 45,
+                    -rotate - 45,
+                    -rotate - 90,
+                    -rotate - 90,
+                    -rotate - 135,
+                    -rotate - 135,
+                    -rotate - 180,
+                    -rotate - 180,
+                    -rotate - 225,
+                    -rotate - 225,
+                    -rotate - 270,
+                    -rotate - 270,
+                    -rotate - 315,
+                    -rotate - 315,
+                    -rotate - 360,
+                    -rotate - 360,
+                  ],
+                }}
+                transition={{
+                  duration: 10,
+                  repeat: Infinity,
+                }}
+                className='border-custom-1 absolute left-0 top-1/2 inline-flex size-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center border bg-gray-950 md:size-14'
               >
                 <Image
                   src={src}
                   alt={alt}
                   className='size-6 md:size-9'
                 />
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           ))}
         </div>
       </div>
