@@ -1,3 +1,6 @@
+'use client';
+import useMousePosition from '@/hooks/useMousePosition';
+import { motion,  useTransform, useSpring } from 'motion/react';
 import underLineImage from '../../public/images/underline.svg?url';
 import Button from '../Button';
 import Orbit from '../Orbit';
@@ -5,6 +8,16 @@ import Planet from '../Planet';
 import Plus from '../Plus';
 
 export const CallToAction = () => {
+  const { xProgress, yProgress } = useMousePosition();
+
+  const springX = useSpring(xProgress);
+  const springY = useSpring(yProgress);
+  const translateLargeX = useTransform(springX, [0, 1], ['-25%', '25%']);
+  const translateLargeY = useTransform(springY, [0, 1], ['-25%', '25%']);
+  const translateMediumX = useTransform(springX, [0, 1], ['-50%', '50%']);
+  const translateMediumY = useTransform(springY, [0, 1], ['-50%', '50%']);
+  const translateSmallX = useTransform(springX, [0, 1], ['-200%', '200%']);
+  const translateSmallY = useTransform(springY, [0, 1], ['-200%', '200%']);
   return (
     <section className='border-section relative  !border-t'>
       <Plus />
@@ -26,28 +39,44 @@ export const CallToAction = () => {
           <Orbit className='size-[800px]' />
         </div>
         <div className='absolute-center -z-10'>
-          <Planet className='translate-x-[-200px] translate-y-[200px] rotate-45' />
-          <Planet className='translate-x-[200px] translate-y-[-180px] -rotate-135' />
-          <Planet
-            size='md'
-            color='teal'
-            className='translate-x-[-500px] rotate-90'
-          />
-          <Planet
-            size='md'
-            color='teal'
-            className='translate-x-[500px] translate-y-[-100px] -rotate-135'
-          />
-          <Planet
-            size='sm'
-            color='fuchsia'
-            className='translate-x-[-400px] translate-y-[-250px] rotate-135'
-          />
-          <Planet
-            size='sm'
-            color='fuchsia'
-            className='translate-x-[400px] translate-y-[150px] -rotate-45'
-          />
+          <motion.div
+            className='absolute left-1/2 top-0'
+            style={{ x: translateLargeX, y: translateLargeY }}
+          >
+            <Planet className='translate-x-[-200px] translate-y-[200px] rotate-45' />
+            <Planet className='translate-x-[200px] translate-y-[-200px] -rotate-135' />
+          </motion.div>
+
+          <motion.div
+            className='absolute left-1/2 top-0'
+            style={{ x: translateMediumX, y: translateMediumY }}
+          >
+            <Planet
+              size='md'
+              color='teal'
+              className='translate-x-[-500px] rotate-90'
+            />
+            <Planet
+              size='md'
+              color='teal'
+              className='translate-x-[500px] translate-y-[-100px] -rotate-135'
+            />
+          </motion.div>
+          <motion.div
+            className='absolute left-1/2 top-0'
+            style={{ x: translateSmallX, y: translateSmallY }}
+          >
+            <Planet
+              size='sm'
+              color='fuchsia'
+              className='translate-x-[-400px] translate-y-[-250px] rotate-135'
+            />
+            <Planet
+              size='sm'
+              color='fuchsia'
+              className='translate-x-[400px] translate-y-[150px] -rotate-45'
+            />
+          </motion.div>
         </div>
         <h2 className='h2-semibold mx-auto max-w-3xl'>
           Join the AI Revolution with{' '}
