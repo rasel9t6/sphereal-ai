@@ -90,7 +90,12 @@ export const Features = () => {
               </li>
             ))}
           </ul>
-          <Button className='mt-16'>Try it now</Button>
+          <Button
+            variant='primary'
+            className='mt-16'
+          >
+            Try it now
+          </Button>
         </div>
         <div className='relative col-span-1 mx-auto size-[270px] md:size-[450px]'>
           <Orbit className='size-[275px] md:size-[300px]' />
